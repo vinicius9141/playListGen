@@ -9,6 +9,10 @@
     <p>{{ item.name }}</p>
   </div>
 </div>
-
+<div *ngFor="let track of searchResults">
+  <input type="checkbox" [value]="track.uri" [(ngModel)]="track.selected">
+  {{ track.name }}
+</div>
+<button (click)="addToPlaylist()">Adicionar à Playlist</button>
 
 <app-playlist-create *ngIf="showPlaylistCreate"></app-playlist-create>

@@ -1,5 +1,5 @@
 <div class="playlist-create-container">
-  <form (ngSubmit)="createPlaylist()">
+  <form (ngSubmit)="createPlaylist(trackUris)">
     <label for="playlist-name">Nome da Playlist:</label>
     <input type="text" id="playlist-name" [(ngModel)]="playlistName" name="playlistName" required>
 
