@@ -5,8 +5,11 @@
 
 <app-playlist-create *ngIf="showPlaylistCreate"></app-playlist-create>
 
-<div *ngFor="let track of searchResults">
-  <input type="checkbox" [value]="track.uri" [(ngModel)]="track.selected">
-  {{ track.name }}
+<div class="results">
+  <div *ngFor="let track of searchResults">
+    <input type="checkbox" [value]="track.uri" [(ngModel)]="track.selected">
+    <img [src]="track.album.images[0].url" [alt]="track.name" width="100px"> {{ track.name }} - <span *ngFor="let artist of track.artists">{{ artist.name + ' ' }}</span>
+  </div>
+  <button (click)="addToPlaylist()">Adicionar à Playlist</button>
+  
 </div>
-<button (click)="addToPlaylist()">Adicionar à Playlist</button>
