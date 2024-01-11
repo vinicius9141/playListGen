@@ -3,16 +3,10 @@
   <button (click)="search()">Pesquisar</button>
 </div>
 
+<app-playlist-create *ngIf="showPlaylistCreate"></app-playlist-create>
 
-<div *ngIf="searchResults && searchResults.length > 0">
-  <div *ngFor="let item of searchResults">
-    <p>{{ item.name }}</p>
-  </div>
-</div>
 <div *ngFor="let track of searchResults">
   <input type="checkbox" [value]="track.uri" [(ngModel)]="track.selected">
   {{ track.name }}
 </div>
 <button (click)="addToPlaylist()">Adicionar à Playlist</button>
-
-<app-playlist-create *ngIf="showPlaylistCreate"></app-playlist-create>
