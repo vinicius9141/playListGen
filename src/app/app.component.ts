@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'playListGen';
+  isAuthenticated: boolean = false;
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit() {
+    this.authService.getAuthStatus().subscribe(
+      (isAuth) => {
+        this.isAuthenticated = isAuth;
+      }
+    );
+  }
 }

@@ -1,0 +1,11 @@
+<div class="playlist-create-container">
+  <form (ngSubmit)="createPlaylist()">
+    <label for="playlist-name">Nome da Playlist:</label>
+    <input type="text" id="playlist-name" [(ngModel)]="playlistName" name="playlistName" required>
+
+    <label for="playlist-description">Descrição:</label>
+    <textarea id="playlist-description" [(ngModel)]="playlistDescription" name="playlistDescription"></textarea>
+
+    <button type="submit">Criar Playlist</button>
+  </form>
+</div>

@@ -1,0 +1,15 @@
+<div class="music-search-container">
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Digite um artista, música, álbum..." class="search-input">
+  <button (click)="search()">Pesquisar</button>
+</div>
+
+<!-- Resultados da busca -->
+<div *ngIf="searchResults && searchResults.length > 0">
+  <div *ngFor="let item of searchResults">
+    <!-- Exibir os resultados aqui -->
+    <p>{{ item.name }}</p>
+  </div>
+</div>
+
+
+<app-playlist-create *ngIf="showPlaylistCreate"></app-playlist-create>
