@@ -17,7 +17,6 @@ export class MusicSearchComponent {
   
   search() {
     if (!this.searchTerm) {
-      // Mostrar algum aviso se a caixa de pesquisa estiver vazia
       return;
     }
 
@@ -27,7 +26,7 @@ export class MusicSearchComponent {
         
       },
       (error) => {
-        // Tratar erros aqui
+    
         console.error(error);
       }
     );
