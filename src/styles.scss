@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../src/app/config-css/remc-calc.scss";
+@import "../src/app/config-css/variable.scss";
+@import "../src/app/config-css/reset.scss";
+
+
+html {
+  font-family: "Roboto", sans-serif;
+}

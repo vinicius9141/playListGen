@@ -1,0 +1,27 @@
+@import "../../../app/config-css/remc-calc.scss";
+@import "../../../app/config-css/variable.scss";
+
+
+:host{
+  .container-btn-login{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    .btn-login{
+      width: remc(190);
+      outline: none;
+      border: none;
+      padding: remc(8);
+      background-color: var(--green);
+      color: var(--white);
+      border-radius: remc(15);
+      cursor: pointer;
+      transition: all .3s;
+
+      &:hover{
+        background-color: #26b859;
+      }
+    }
+  }
+}
